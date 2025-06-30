@@ -128,7 +128,7 @@
           buildInputs = [
             (hspkgs pkgs).cabal-install
             (hspkgs pkgs).haskell-language-server
-          ] ++ testDeps;
+          ];
           withHoogle = true;
 
           # point cabal repl to system deps

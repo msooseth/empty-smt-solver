@@ -24,7 +24,6 @@ extra-doc-files:
 
 
 executable empty-smt-solver
-  import: shared
   default-language: GHC2021
   hs-source-dirs:
     src
