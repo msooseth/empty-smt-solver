@@ -8,6 +8,7 @@ main = loop
       case line of
           "(check-sat)" -> putStrLn "unknown"
           _ | "(set-option" `isPrefixOf` line -> putStrLn "success"
+          _ | "(set-info" `isPrefixOf` line -> putStrLn "success"
           _ | "(reset)" `isPrefixOf` line -> putStrLn "success"
             | otherwise -> return ()
       loop
