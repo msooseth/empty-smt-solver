@@ -1,0 +1,34 @@
+cabal-version: 3.0
+name:
+  empty-smt-solver
+version:
+  0.1
+synopsis:
+  SMT solver that returns "unknown" for all queries
+description:
+  Simple command-line SMT "solver" that returns "unknown" for all queries
+homepage:
+  https://github.com/msooseth/empty-smt-solver
+license:
+  AGPL-3.0-only
+author:
+  Mate Soos
+maintainer:
+  soos.mate@gmail.com
+category:
+  Ethereum
+build-type:
+  Simple
+extra-doc-files:
+  CHANGELOG.md
+
+
+executable empty-smt-solver
+  import: shared
+  default-language: GHC2021
+  hs-source-dirs:
+    src
+  main-is:
+    EmptySolver.hs
+  build-depends:
+    base,
