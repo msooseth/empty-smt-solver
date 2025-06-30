@@ -1,7 +1,13 @@
-import Control.Monad (when)
+import Data.List (isPrefixOf)
 
 main :: IO ()
-main = do
-    line <- getLine
-    when (line == "(check-sat)") $ putStrLn "unknown"
-    main
+main = loop
+  where
+    loop = do
+      line <- getLine
+      case line of
+          "(check-sat)" -> putStrLn "unknown"
+          _ | "(set-option" `isPrefixOf` line -> putStrLn "success"
+            | otherwise -> return ()
+      loop
+
