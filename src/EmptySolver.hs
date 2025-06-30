@@ -1,4 +1,5 @@
 import Data.List (isPrefixOf)
+import System.IO
 
 main :: IO ()
 main = loop
@@ -11,5 +12,6 @@ main = loop
           _ | "(set-info" `isPrefixOf` line -> putStrLn "success"
           _ | "(reset)" `isPrefixOf` line -> putStrLn "success"
             | otherwise -> return ()
+      hFlush stdout
       loop
 
